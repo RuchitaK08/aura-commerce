@@ -1,6 +1,8 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { ShopProvider } from "@/state/shop";
+import { Overlays } from "@/components/overlays/Overlays";
 
 function NotFoundComponent() {
   return (
@@ -65,5 +67,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <ShopProvider>
+      <Outlet />
+      <Overlays />
+    </ShopProvider>
+  );
 }
