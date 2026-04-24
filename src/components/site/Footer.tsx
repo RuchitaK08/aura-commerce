@@ -1,31 +1,48 @@
+import { useShop } from "@/state/shop";
+import { Link } from "@tanstack/react-router";
+
 export function Footer() {
+  const { toast, openMood } = useShop();
   return (
-    <footer className="mt-32 border-t border-border/40 bg-gradient-surface">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div>
-            <h3 className="font-display text-2xl tracking-[0.2em]">MAISON<span className="text-gradient-gold"> NOIR</span></h3>
-            <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-              An atelier of quiet luxury. Crafted in Paris, Florence, and Kyoto since 1962.
+    <footer className="mt-20 border-t-2 border-border bg-gradient-surface">
+      <div className="mx-auto max-w-[1400px] px-4 md:px-10 py-16">
+        <div className="grid gap-10 md:grid-cols-4">
+          <div className="md:col-span-2">
+            <h3 className="font-display text-3xl">oops i <span className="italic text-gradient-vibe">bought</span> it again 🛍️</h3>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed max-w-sm">
+              your favorite shopping mistake since 2024. cute stuff, fast shipping, no judgment.
             </p>
+            <div className="mt-5 flex gap-2">
+              {["instagram", "tiktok", "pinterest"].map(s => (
+                <button key={s} onClick={() => toast(`follow us on ${s} 💖`)} className="px-4 py-2 rounded-full border-2 border-border text-xs font-bold hover:border-primary hover:bg-primary/10 transition-colors">{s}</button>
+              ))}
+            </div>
           </div>
           {[
-            { t: "Maison", l: ["Our Story", "Craftsmanship", "Sustainability", "Press"] },
-            { t: "Client Care", l: ["Contact", "Shipping & Returns", "Care Guide", "Size Guide"] },
-            { t: "Discover", l: ["Journal", "Private Appointments", "Gift Cards", "Boutiques"] },
+            { t: "shop", l: [["all drops", "/shop"], ["new in", "/shop"], ["bestsellers", "/shop"], ["sale", "/shop"]] as [string, string][] },
+            { t: "the deal", l: [["mood quiz", "mood"], ["shipping", "toast"], ["returns", "toast"], ["faq", "toast"]] as [string, string][] },
           ].map((c) => (
             <div key={c.t}>
-              <p className="text-xs uppercase tracking-[0.25em] text-gold mb-5">{c.t}</p>
-              <ul className="space-y-3 text-sm text-foreground/70">
-                {c.l.map((i) => <li key={i}><a href="#" className="hover:text-gold transition-colors">{i}</a></li>)}
+              <p className="text-xs uppercase tracking-widest text-primary font-bold mb-4">{c.t}</p>
+              <ul className="space-y-2.5 text-sm">
+                {c.l.map(([label, target]) => (
+                  <li key={label}>
+                    {target === "mood" ? (
+                      <button onClick={openMood} className="hover:text-primary transition-colors">{label}</button>
+                    ) : target === "toast" ? (
+                      <button onClick={() => toast(`${label} info coming soon 💌`)} className="hover:text-primary transition-colors">{label}</button>
+                    ) : (
+                      <Link to={target} className="hover:text-primary transition-colors">{label}</Link>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
         </div>
-        <div className="gold-divider mt-16" />
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground tracking-wider">
-          <p>© {new Date().getFullYear()} Maison Noir. All rights reserved.</p>
-          <p className="uppercase tracking-[0.2em]">Paris · Milano · Tokyo · New York</p>
+        <div className="mt-12 pt-6 border-t border-border flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} oops i bought it again. delulu is the solulu.</p>
+          <p>made with 💖 + caffeine</p>
         </div>
       </div>
     </footer>
