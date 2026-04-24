@@ -18,12 +18,12 @@ export type Product = {
 };
 
 export const products: Product[] = [
-  { id: "noir-tote-01", name: "Atelier Tote", tagline: "Hand-stitched calfskin", price: 1280, category: "Leather", image: p1, rating: 4.9, reviews: 214, isNew: true },
-  { id: "noir-watch-01", name: "Solène Automatic", tagline: "18k gold case, sapphire crystal", price: 4850, category: "Watches", image: p2, rating: 4.8, reviews: 96 },
-  { id: "noir-coat-01", name: "Maître Overcoat", tagline: "Italian wool, double-breasted", price: 1980, category: "Outerwear", image: p3, rating: 4.9, reviews: 142 },
-  { id: "noir-sneaker-01", name: "Onyx Low", tagline: "Full-grain leather, blake-stitched", price: 620, category: "Footwear", image: p4, rating: 4.7, reviews: 318, isNew: true },
-  { id: "noir-pendant-01", name: "Larme d'Or", tagline: "Solid 18k gold pendant", price: 990, category: "Jewelry", image: p5, rating: 5.0, reviews: 67 },
-  { id: "noir-parfum-01", name: "Ambre Noir", tagline: "Eau de Parfum · 100ml", price: 240, category: "Fragrance", image: p6, rating: 4.8, reviews: 502 },
+  { id: "oops-tote-01", name: "It Bag, Literally", tagline: "the only bag your fits need rn ✨", price: 128, category: "Leather", image: p1, rating: 4.9, reviews: 2143, isNew: true },
+  { id: "oops-watch-01", name: "Time Flex", tagline: "wrist game on max 💛", price: 285, category: "Watches", image: p2, rating: 4.8, reviews: 967 },
+  { id: "oops-coat-01", name: "Main Character Coat", tagline: "for your villain era 🖤", price: 198, category: "Outerwear", image: p3, rating: 4.9, reviews: 1422 },
+  { id: "oops-sneaker-01", name: "No Thoughts Sneaks", tagline: "goes w/ literally everything", price: 92, category: "Footwear", image: p4, rating: 4.7, reviews: 3187, isNew: true },
+  { id: "oops-pendant-01", name: "Tiny Tear Pendant", tagline: "delulu but make it gold ✨", price: 49, category: "Jewelry", image: p5, rating: 5.0, reviews: 678 },
+  { id: "oops-parfum-01", name: "Hot Take EDP", tagline: "smells like a soft launch 🔥", price: 64, category: "Fragrance", image: p6, rating: 4.8, reviews: 5024 },
 ];
 
 export const categories = ["Leather", "Watches", "Outerwear", "Footwear", "Jewelry", "Fragrance"] as const;
