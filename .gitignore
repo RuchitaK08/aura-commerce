@@ -15,6 +15,7 @@ dist-ssr
 .tanstack/**
 .nitro
 *.local
+.env
 
 # Wrangler / Cloudflare
 .wrangler/
@@ -30,5 +31,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-PAYPAL_CLIENT_ID=AbLA6pVAidgudz1A5GpyQvTo31HeoBTuEBUK_b1U7qEdZq8iAr44yL2xg4AA-U4b0nddeVCCl5BRpktg
-PAYPAL_CLIENT_SECRET=EILvGX63XH8Wj9lE8rKCvT2hBQhe904wtd9OSQ7e5dVpMjDn_nevRrooOqi1VpMh82-3JvcDAd61JzBt
